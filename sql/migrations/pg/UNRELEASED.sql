@@ -11,8 +11,3 @@
 --
 -- Pre-commit hook (and the matching CI job) rejects any statement that is not preceded by
 -- an `-- Issue #NNN:` header line.
--- Issue #56: Unify CRS to EPSG:4326 across all spatial tables.
--- Roads and intersections originally declared EPSG:32734 (WGS 84 / UTM Zone 34S)
--- while every other spatial table used EPSG:4326. Bring them onto the same
--- declared CRS so the canonical schema is uniform; users that need metric
--- accuracy reproject at build time via scripts/build_gpkg.sh --crs.
